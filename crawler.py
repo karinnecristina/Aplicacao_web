@@ -36,4 +36,4 @@ def download(url, file_name_extention):
 if __name__ == '__main__':
 
 	c = crawler(base_url)
-	download(base_url, 'test.xlsx')
+	download(base_url + c["link"], 'test.xlsx')
