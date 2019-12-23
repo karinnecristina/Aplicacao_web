@@ -3,7 +3,7 @@ Fontes:
 	https://stackoverflow.com/questions/36378441/does-flask-jsonify-support-utf-8?rq=1
 """
 
-
+import os
 import pandas as pd
 
 from flask import Flask, jsonify
@@ -12,7 +12,9 @@ app = Flask(__name__)
 
 app.config['JSON_AS_ASCII'] = False
 
-df = pd.read_excel('test.xlsx') # latitude, longitude e data_avist
+file = os.listdir('files')
+
+df = pd.read_excel(f'files/{file[0]}') # latitude, longitude e data_avist
 
 @app.route('/api/v1', methods=['GET'])
 def powerbi():
