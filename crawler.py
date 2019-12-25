@@ -96,7 +96,7 @@ def main():
 					subject_matter='Atualições do IBAMA - http://www.ibama.gov.br/manchasdeoleo-localidades-atingidas', 
 					text_email='Novas atualizações: {} - {} - {}'.format(c['data'], base_url + c['link'], c['informacoes']))
 
-				logging.info(f'E-mail enviado para {CONFIG['recipient']}, informando novas atualizações.')
+				logging.info('E-mail enviado para {}, informando novas atualizações.'.format(CONFIG['recipient']))
 
 				with open('links.txt', 'a') as f:
 					f.write(new + '\n')
