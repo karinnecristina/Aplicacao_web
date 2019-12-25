@@ -3,6 +3,7 @@ Fontes:
 	https://stackoverflow.com/questions/7243750/download-file-from-web-in-python-3
 	https://pypi.org/project/requests-html/
 	https://stackoverflow.com/questions/16512592/login-credentials-not-working-with-gmail-smtp
+	https://stackoverflow.com/questions/54657006/smtpauthenticationerror-5-7-14-please-log-n5-7-14-in-via-your-web-browser
 """
 import os
 import requests
@@ -68,8 +69,7 @@ def send_mail(sender, password, recipient, subject_matter, text_email):
     server.quit()
 
 
-if __name__ == '__main__':
-
+def main():
 	try:
 		while True:
 			c = crawler(base_url)
@@ -79,9 +79,6 @@ if __name__ == '__main__':
 
 			if new not in former:
 				logging.info('Novo link: {}'.format(new))
-
-				new_link = open('links.txt', 'a')
-				new_link.write(new + '\n')
 
 				file = os.listdir('files')
 				if file:
@@ -99,10 +96,15 @@ if __name__ == '__main__':
 					subject_matter='Atualições do IBAMA - http://www.ibama.gov.br/manchasdeoleo-localidades-atingidas', 
 					text_email='Novas atualizações: {} - {} - {}'.format(c['data'], base_url + c['link'], c['informacoes']))
 
-				logging.info('E-mail enviado, informando novas atualizações.')
-			else:
-				logging.info('Sem atualizações.')
+				logging.info(f'E-mail enviado para {CONFIG['recipient']}, informando novas atualizações.')
+
+				with open('links.txt', 'a') as f:
+					f.write(new + '\n')
+
 
 	except Exception as e:
 		raise e
-		
+
+
+if __name__ == '__main__':
+	main()
