@@ -1,6 +1,6 @@
 
 CONFIG = {
 	'sender': 'karinnecristinapereira@gmail.com',
-	'password': 'YOUR_PASSWORD',
+	'password': '13309857700',
 	'recipient': 'karinnecristinapereira@gmail.com'
 }
