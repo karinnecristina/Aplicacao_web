@@ -18,8 +18,8 @@ CONFIG = {
 	'recipient': 'naruto@gmail.com'
 }
 ```
-Crie uma pasta chamada ```files``` na raiz do projeto.
-Depois de realizado as configurações iniciais execute os arquivos ```crawler.py``` e ```app.py```
+* Crie uma pasta chamada ```files``` na raiz do projeto.
+* Depois de realizado as configurações iniciais execute os arquivos ```crawler.py``` e ```app.py```
 ```
 $ python3 crawler.py
 $ python3 app.py
