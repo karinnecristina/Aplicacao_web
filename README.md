@@ -48,4 +48,4 @@ $ git add .
 $ git commit -am "first commit"
 $ git push heroku master
 ```
-No site do heroku na aba ```Resource``` edite e ative o segundo serviço. Agora acesse o endereço [https://nome-do-seu-app.herokuapp.com/api/v1](https://nome-do-seu-app.herokuapp.com/api/v1).
+No site do heroku na aba ```Resource``` edite e ative o segundo serviço. Agora acesse o endereço [https://test-neww.herokuapp.com/api/v1](https://nome-do-seu-app.herokuapp.com/api/v1).
